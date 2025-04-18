@@ -6,6 +6,9 @@ import 'package:live_order_tracking/features/auth/login/cubit/login_cubit.dart';
 import 'package:live_order_tracking/features/auth/login/widgets/login_screen.dart';
 import 'package:live_order_tracking/features/auth/register/cubit/register_cubit.dart';
 import 'package:live_order_tracking/features/auth/register/widgets/register_screen.dart';
+import 'package:live_order_tracking/features/home/home_screen.dart';
+import 'package:live_order_tracking/features/location_picker/location_picker_screen.dart';
+import 'package:live_order_tracking/features/orders/add_order/add_order_Screen.dart';
 import 'package:live_order_tracking/features/splash_screen/splash_screen.dart';
 
 class RouteGenerationConfig {
@@ -34,6 +37,21 @@ class RouteGenerationConfig {
               create: (context) => sl<RegisterCubit>(),
               child: RegisterScreen(),
             ),
+      ),
+      GoRoute(
+        name: AppRoutes.homeScreen,
+        path: AppRoutes.homeScreen,
+        builder: (context, state) => const HomeScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.addOrderScreen,
+        path: AppRoutes.addOrderScreen,
+        builder: (context, state) => const AddOrderScreen(),
+      ),
+      GoRoute(
+        name: AppRoutes.placePickerScreen,
+        path: AppRoutes.placePickerScreen,
+        builder: (context, state) => const LocationPickerScreen(),
       ),
     ],
   );

@@ -157,6 +157,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 message: state.message,
                 type: AnimatedSnackBarType.success,
               );
+              GoRouter.of(context).pushReplacementNamed(AppRoutes.homeScreen);
             }
             if (state is ErrorLoginState) {
               showAnimatedSnackDialog(
