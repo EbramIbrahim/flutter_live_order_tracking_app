@@ -16,8 +16,8 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen>
     with TickerProviderStateMixin {
-  late AnimationController animationController;
-  late Animation<double> animation;
+  AnimationController? animationController;
+  Animation<double>? animation;
 
   @override
   void initState() {
@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen>
     )..repeat(reverse: true);
 
     animation = CurvedAnimation(
-      parent: animationController,
+      parent: animationController!,
       curve: Curves.easeOut,
     );
 
@@ -45,7 +45,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void dispose() {
-    animationController.dispose();
+    animationController!.dispose();
     super.dispose();
   }
 
@@ -54,7 +54,7 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       body: Center(
         child: ScaleTransition(
-          scale: animation,
+          scale: animation!,
           child: Image.asset(AppAssets.logo, width: 200.w, height: 200.w),
         ),
       ),
