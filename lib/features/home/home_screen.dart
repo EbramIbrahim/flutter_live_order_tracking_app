@@ -26,7 +26,11 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             InkWell(
-              onTap: () {},
+              onTap: () {
+                GoRouter.of(
+                  context,
+                ).pushReplacementNamed(AppRoutes.allOrdersScreen);
+              },
               child: Container(
                 height: 190.h,
                 width: 190.h,

@@ -9,6 +9,9 @@ import 'package:live_order_tracking/features/auth/register/widgets/register_scre
 import 'package:live_order_tracking/features/home/home_screen.dart';
 import 'package:live_order_tracking/features/location_picker/location_picker_screen.dart';
 import 'package:live_order_tracking/features/orders/add_order/add_order_Screen.dart';
+import 'package:live_order_tracking/features/orders/add_order/cubit/add_order_cubit.dart';
+import 'package:live_order_tracking/features/orders/all_orders/cubit/all_orders_cubit.dart';
+import 'package:live_order_tracking/features/orders/all_orders/widgets/all_orders_screen.dart';
 import 'package:live_order_tracking/features/splash_screen/splash_screen.dart';
 
 class RouteGenerationConfig {
@@ -46,7 +49,20 @@ class RouteGenerationConfig {
       GoRoute(
         name: AppRoutes.addOrderScreen,
         path: AppRoutes.addOrderScreen,
-        builder: (context, state) => const AddOrderScreen(),
+        builder:
+            (context, state) => BlocProvider(
+              create: (context) => sl<AddOrderCubit>(),
+              child: AddOrderScreen(),
+            ),
+      ),
+      GoRoute(
+        name: AppRoutes.allOrdersScreen,
+        path: AppRoutes.allOrdersScreen,
+        builder:
+            (context, state) => BlocProvider(
+              create: (context) => sl<AllOrdersCubit>(),
+              child: AllOrdersScreen(),
+            ),
       ),
       GoRoute(
         name: AppRoutes.placePickerScreen,

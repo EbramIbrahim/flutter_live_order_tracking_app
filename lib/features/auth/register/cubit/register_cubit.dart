@@ -7,9 +7,13 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   RegisterCubit(this.registerRepository) : super(InitialRegisterState());
 
-  void register(String email, String password) async {
+  void register(String email, String password, String username) async {
     emit(LoadingRegisterState());
-    final result = await registerRepository.register(email, password);
+    final result = await registerRepository.register(
+      email: email,
+      password: password,
+      username: username,
+    );
     result.fold(
       (errorMessage) {
         emit(ErrorRegisterState(errorMessage));

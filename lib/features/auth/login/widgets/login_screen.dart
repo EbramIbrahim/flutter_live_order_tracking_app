@@ -39,6 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: true,
         body: BlocConsumer<LoginCubit, LoginState>(
           builder: (context, state) {
             if (state is LoadingLoginState) {

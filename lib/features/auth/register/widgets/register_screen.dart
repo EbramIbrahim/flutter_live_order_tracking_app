@@ -159,6 +159,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             context.read<RegisterCubit>().register(
                               email.text,
                               password.text,
+                              username.text,
                             );
                           }
                         },
