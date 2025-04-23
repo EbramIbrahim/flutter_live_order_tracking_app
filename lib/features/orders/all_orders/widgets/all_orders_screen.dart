@@ -21,6 +21,7 @@ class _AllOrdersScreenState extends State<AllOrdersScreen> {
   @override
   void initState() {
     super.initState();
+    if (mounted) context.read<AllOrdersCubit>().getAllOrders();
   }
 
   @override

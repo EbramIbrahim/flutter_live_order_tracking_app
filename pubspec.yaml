@@ -56,6 +56,7 @@ dependencies:
   geocoding: ^3.0.0
   intl: ^0.20.2
   place_picker_google: ^0.0.15
+  flutter_polyline_points: ^2.1.0
   
 
 dev_dependencies:
